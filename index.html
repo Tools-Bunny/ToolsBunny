@@ -127,57 +127,57 @@
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
         const aiTools = [
-            { name: "Token Counter & Cost Calculator", url: "ai-tools/token-counter.html", desc: "Calculate pricing models and count real-time LLM context tokens." },
-            { name: "System Prompt Injector", url: "ai-tools/system-prompt-injector.html", desc: "Simulate, structure, and safe-check system prompts against instruction bypasses." },
-            { name: "Markdown & LaTeX Stripper", url: "ai-tools/markdown-latex-stripper.html", desc: "Clean synthetic LLM text formatting outputs down to plain editorial copy." },
-            { name: "Prompt Variations Generator", url: "ai-tools/prompt-variations.html", desc: "Generate multi-angle programmatic prompt matrices for robust testing." },
-            { name: "AI Output Diff Space", url: "ai-tools/ai-diff-space.html", desc: "Compare generational variance between multiple AI response runs side-by-side." },
-            { name: "Smart Prompt Chunking Station", url: "ai-tools/prompt-chunking.html", desc: "Automate text division patterns cleanly inside strict LLM window token limits." },
-            { name: "Tone & Readability Dashboard", url: "ai-tools/tone-dashboard.html", desc: "Audit structural voice attributes and complexity indices of computational texts." },
-            { name: "Chat History Payload Formatter", url: "ai-tools/chat-payload-formatter.html", desc: "Convert standard conversational text files instantly into API structural JSON code arrays." },
-            { name: "Vision API Image Optimizer", url: "ai-tools/vision-image-optimizer.html", desc: "Scale, down-sample, and adjust dimensions for visual parsing engine inputs." },
-            { name: "Hyperparameter Visualizer", url: "ai-tools/hyperparameter-visualizer.html", desc: "Map context weights interactively to conceptualize fine-tuning parameter scales." },
-            { name: "Local Embedding Similarity Calculator", url: "ai-tools/embedding-similarity.html", desc: "Run client-side cosine similarity comparisons over text arrays safely." },
-            { name: "JSON Structured Schema Lint Space", url: "ai-tools/json-schema-lint.html", desc: "Verify complex programmatic structural configurations instantly against JSON parameters." },
-            { name: "CSV Few-Shot Dataset Factory", url: "ai-tools/csv-dataset-factory.html", desc: "Format explicit user and system message pairs smoothly to construct LLM dataset files." },
-            { name: "System Parameter Cheat Sheet", url: "ai-tools/system-parameter-cheatsheet.html", desc: "Quick-reference directory mapping system constraints across global AI providers." },
-            { name: "API Infrastructure Status Monitor", url: "ai-tools/api-status-monitor.html", desc: "Check localized developer operational status markers across major web nodes." }
+            { name: "Token Counter & Cost Calculator", file: "ai-tools/token-counter.html", desc: "Calculate pricing models and count real-time LLM context tokens." },
+            { name: "System Prompt Injector", file: "ai-tools/system-prompt-injector.html", desc: "Simulate, structure, and safe-check system prompts against instruction bypasses." },
+            { name: "Markdown & LaTeX Stripper", file: "ai-tools/markdown-latex-stripper.html", desc: "Clean synthetic LLM text formatting outputs down to plain editorial copy." },
+            { name: "Prompt Variations Generator", file: "ai-tools/prompt-variations.html", desc: "Generate multi-angle programmatic prompt matrices for robust testing." },
+            { name: "AI Output Diff Space", file: "ai-tools/ai-diff-space.html", desc: "Compare generational variance between multiple AI response runs side-by-side." },
+            { name: "Smart Prompt Chunking Station", file: "ai-tools/prompt-chunking.html", desc: "Automate text division patterns cleanly inside strict LLM window token limits." },
+            { name: "Tone & Readability Dashboard", file: "ai-tools/tone-dashboard.html", desc: "Audit structural voice attributes and complexity indices of computational texts." },
+            { name: "Chat History Payload Formatter", file: "ai-tools/chat-payload-formatter.html", desc: "Convert standard conversational text files instantly into API structural JSON code arrays." },
+            { name: "Vision API Image Optimizer", file: "ai-tools/vision-image-optimizer.html", desc: "Scale, down-sample, and adjust dimensions for visual parsing engine inputs." },
+            { name: "Hyperparameter Visualizer", file: "ai-tools/hyperparameter-visualizer.html", desc: "Map context weights interactively to conceptualize fine-tuning parameter scales." },
+            { name: "Local Embedding Similarity Calculator", file: "ai-tools/embedding-similarity.html", desc: "Run client-side cosine similarity comparisons over text arrays safely." },
+            { name: "JSON Structured Schema Lint Space", file: "ai-tools/json-schema-lint.html", desc: "Verify complex programmatic structural configurations instantly against JSON parameters." },
+            { name: "CSV Few-Shot Dataset Factory", file: "ai-tools/csv-dataset-factory.html", desc: "Format explicit user and system message pairs smoothly to construct LLM dataset files." },
+            { name: "System Parameter Cheat Sheet", file: "ai-tools/system-parameter-cheatsheet.html", desc: "Quick-reference directory mapping system constraints across global AI providers." },
+            { name: "API Infrastructure Status Monitor", file: "ai-tools/api-status-monitor.html", desc: "Check localized developer operational status markers across major web nodes." }
         ];
 
         const creatorTools = [
-            { name: "Title & Hook A/B Tester & Previewer", url: "creators/title-ab-tester.html", desc: "Preview and optimize titles across modern video discovery dimensions." },
-            { name: "Dynamic Video Script Read-Time Calculator", url: "creators/script-read-time.html", desc: "Convert voice script strings to accurate pacing runtimes based on talking speeds." },
-            { name: "Thumbnail Color Contrast & 'Squint Test' Simulator", url: "creators/thumbnail-squint-test.html", desc: "Simulate scaling blur indices and analyze visual design pop performance." },
-            { name: "Multi-Platform Social Media Character Counter", url: "creators/social-character-counter.html", desc: "Track safe text layout thresholds across unified global publishing pipelines." },
-            { name: "Video Frame Aspect Ratio & Resolution Calculator", url: "creators/aspect-ratio-calculator.html", desc: "Find true dimensional calculations for multi-format video renders." },
-            { name: "YouTube Shorts & Reels Safe Zone Tester", url: "creators/shorts-safe-zone.html", desc: "Overlay visual safe zones to verify critical text and branding elements stay visible." },
-            { name: "Video File Size & Bitrate Target Space Calculator", url: "creators/video-file-size-calculator.html", desc: "Evaluate exact digital storage profiles against pipeline bitrate targets." },
-            { name: "Interactive Video Script & Content Concept Spinner", url: "creators/content-concept-spinner.html", desc: "Generate unexpected structural creative starting points for short or long-form copy." },
-            { name: "YouTube Description Template Generator & Formatter", url: "creators/youtube-description-generator.html", desc: "Deploy perfectly structured, clean social reference and chapter configurations." },
-            { name: "YouTube Creator CPM & Earnings Forecasting Matrix", url: "creators/cpm-earnings-forecaster.html", desc: "Map channel audience earnings algorithms across dynamic variable shifts." },
-            { name: "SRT/VTT Subtitle & Caption Text Sanitizer", url: "creators/subtitle-sanitizer.html", desc: "Strip raw operational metadata configurations out of standard timing document sheets." },
-            { name: "Video Metric Retrospective Matrix (Retention Plotter)", url: "creators/retention-plotter.html", desc: "Manually graph audience retention drops to systematically isolate churn vectors." },
-            { name: "YouTube Tag & Meta Keyword Array Extractor", url: "creators/tag-extractor.html", desc: "Process meta-string tags swiftly into clean comma-delimited reference sets." },
-            { name: "Sponsor Integration Pacing & Ad Read Marker Tracker", url: "creators/sponsor-pacing-tracker.html", desc: "Optimize promotional integration intervals safely within standard entertainment arcs." },
-            { name: "Cross-Platform Video Distribution Checklist Array", url: "creators/distribution-checklist.html", desc: "Verify critical platform optimization steps prior to global network publishing." }
+            { name: "Title & Hook A/B Tester & Previewer", file: "creators/title-ab-tester.html", desc: "Preview and optimize titles across modern video discovery dimensions." },
+            { name: "Dynamic Video Script Read-Time Calculator", file: "creators/script-read-time.html", desc: "Convert voice script strings to accurate pacing runtimes based on talking speeds." },
+            { name: "Thumbnail Color Contrast & 'Squint Test' Simulator", file: "creators/thumbnail-squint-test.html", desc: "Simulate scaling blur indices and analyze visual design pop performance." },
+            { name: "Multi-Platform Social Media Character Counter", file: "creators/social-character-counter.html", desc: "Track safe text layout thresholds across unified global publishing pipelines." },
+            { name: "Video Frame Aspect Ratio & Resolution Calculator", file: "creators/aspect-ratio-calculator.html", desc: "Find true dimensional calculations for multi-format video renders." },
+            { name: "YouTube Shorts & Reels Safe Zone Tester", file: "creators/shorts-safe-zone.html", desc: "Overlay visual safe zones to verify critical text and branding elements stay visible." },
+            { name: "Video File Size & Bitrate Target Space Calculator", file: "creators/video-file-size-calculator.html", desc: "Evaluate exact digital storage profiles against pipeline bitrate targets." },
+            { name: "Interactive Video Script & Content Concept Spinner", file: "creators/content-concept-spinner.html", desc: "Generate unexpected structural creative starting points for short or long-form copy." },
+            { name: "YouTube Description Template Generator & Formatter", file: "creators/youtube-description-generator.html", desc: "Deploy perfectly structured, clean social reference and chapter configurations." },
+            { name: "YouTube Creator CPM & Earnings Forecasting Matrix", file: "creators/cpm-earnings-forecaster.html", desc: "Map channel audience earnings algorithms across dynamic variable shifts." },
+            { name: "SRT/VTT Subtitle & Caption Text Sanitizer", file: "creators/subtitle-sanitizer.html", desc: "Strip raw operational metadata configurations out of standard timing document sheets." },
+            { name: "Video Metric Retrospective Matrix (Retention Plotter)", file: "creators/retention-plotter.html", desc: "Manually graph audience retention drops to systematically isolate churn vectors." },
+            { name: "YouTube Tag & Meta Keyword Array Extractor", file: "creators/tag-extractor.html", desc: "Process meta-string tags swiftly into clean comma-delimited reference sets." },
+            { name: "Sponsor Integration Pacing & Ad Read Marker Tracker", file: "creators/sponsor-pacing-tracker.html", desc: "Optimize promotional integration intervals safely within standard entertainment arcs." },
+            { name: "Cross-Platform Video Distribution Checklist Array", file: "creators/distribution-checklist.html", desc: "Verify critical platform optimization steps prior to global network publishing." }
         ];
 
         const digitalTools = [
-            { name: "AI Prompt Optimizer & Token Shrinker", url: "digital-users/prompt-optimizer.html", desc: "Condense long prompt strings into minimalist shorthand that models understand." },
-            { name: "CSV/JSON Raw Data Cleaner & Visual Mapper", url: "digital-users/data-cleaner.html", desc: "Sanitize tabular structured records and map data fields via local memory processing." },
-            { name: "Smart SVG Optimizer & Inline React Code Injector", url: "digital-users/svg-optimizer.html", desc: "Clean junk vector paths and transform raw XML elements into active React components." },
-            { name: "Web-Safe PDF Redactor & Contract Sanitizer", url: "digital-users/pdf-redactor.html", desc: "Black out sensitive strings completely without passing documents to external servers." },
-            { name: "Universal Dynamic CSS Theme Generator", url: "digital-users/css-theme-generator.html", desc: "Construct fully balanced dark and light tone system palettes matching specific contrast rules." },
-            { name: "Meta Tag Debugger & Social Share Simulator", url: "digital-users/meta-tag-debugger.html", desc: "Verify explicit global search and social crawl header data definitions instantly." },
-            { name: "Browser Client-Side Hash & Password Auditor", url: "digital-users/hash-password-auditor.html", desc: "Audit structural password complexity score matrices using localized sandboxed engines." },
-            { name: "Markdown to Clean Semantic HTML / PDF Converter", url: "digital-users/markdown-converter.html", desc: "Convert document structural layouts safely into high-integrity code layouts." },
-            { name: "Advanced Multi-Format Font Compressor & Subsetter", url: "digital-users/font-compressor.html", desc: "Strip unused glyph files out of font packages to minimize system delivery weights." },
-            { name: "JSON to TypeScript Interface Automated Engine", url: "digital-users/json-to-typescript.html", desc: "Convert standard operational data response profiles into static TypeScript contracts." },
-            { name: "Remote Team 'Best Meeting Window' Calculator", url: "digital-users/meeting-window-calculator.html", desc: "Overlay distributed global standard hours to isolate optimal operating windows." },
-            { name: "Responsive Fluid Typography & Clamp Calculator", url: "digital-users/clamp-calculator.html", desc: "Generate smooth modern screen scaling typography syntax values flawlessly." },
-            { name: "SQL Query Prettifier & Error Diagnostic Console", url: "digital-users/sql-prettifier.html", desc: "Format raw data queries perfectly while highlighting structural command syntax rules." },
-            { name: "Regex Playground & Interactive String Explainer", url: "digital-users/regex-playground.html", desc: "Test structural lookup scripts directly against explicit variable arrays interactively." },
-            { name: "Dynamic Open-Graph (OG) Image Automation Template", url: "digital-users/og-image-template.html", desc: "Render structural cover graphics locally on canvas for fast visual deployments." }
+            { name: "AI Prompt Optimizer & Token Shrinker", file: "digital-users/prompt-optimizer.html", desc: "Condense long prompt strings into minimalist shorthand that models understand." },
+            { name: "CSV/JSON Raw Data Cleaner & Visual Mapper", file: "digital-users/data-cleaner.html", desc: "Sanitize tabular structured records and map data fields via local memory processing." },
+            { name: "Smart SVG Optimizer & Inline React Code Injector", file: "digital-users/svg-optimizer.html", desc: "Clean junk vector paths and transform raw XML elements into active React components." },
+            { name: "Web-Safe PDF Redactor & Contract Sanitizer", file: "digital-users/pdf-redactor.html", desc: "Black out sensitive strings completely without passing documents to external servers." },
+            { name: "Universal Dynamic CSS Theme Generator", file: "digital-users/css-theme-generator.html", desc: "Construct fully balanced dark and light tone system palettes matching specific contrast rules." },
+            { name: "Meta Tag Debugger & Social Share Simulator", file: "digital-users/meta-tag-debugger.html", desc: "Verify explicit global search and social crawl header data definitions instantly." },
+            { name: "Browser Client-Side Hash & Password Auditor", file: "digital-users/hash-password-auditor.html", desc: "Audit structural password complexity score matrices using localized sandboxed engines." },
+            { name: "Markdown to Clean Semantic HTML / PDF Converter", file: "digital-users/markdown-converter.html", desc: "Convert document structural layouts safely into high-integrity code layouts." },
+            { name: "Advanced Multi-Format Font Compressor & Subsetter", file: "digital-users/font-compressor.html", desc: "Strip unused glyph files out of font packages to minimize system delivery weights." },
+            { name: "JSON to TypeScript Interface Automated Engine", file: "digital-users/json-to-typescript.html", desc: "Convert standard operational data response profiles into static TypeScript contracts." },
+            { name: "Remote Team 'Best Meeting Window' Calculator", file: "digital-users/meeting-window-calculator.html", desc: "Overlay distributed global standard hours to isolate optimal operating windows." },
+            { name: "Responsive Fluid Typography & Clamp Calculator", file: "digital-users/clamp-calculator.html", desc: "Generate smooth modern screen scaling typography syntax values flawlessly." },
+            { name: "SQL Query Prettifier & Error Diagnostic Console", file: "digital-users/sql-prettifier.html", desc: "Format raw data queries perfectly while highlighting structural command syntax rules." },
+            { name: "Regex Playground & Interactive String Explainer", file: "digital-users/regex-playground.html", desc: "Test structural lookup scripts directly against explicit variable arrays interactively." },
+            { name: "Dynamic Open-Graph (OG) Image Automation Template", file: "digital-users/og-image-template.html", desc: "Render structural cover graphics locally on canvas for fast visual deployments." }
         ];
 
         function buildGrid(items, elementId) {
@@ -188,7 +188,7 @@
                         <h3 class="text-lg font-semibold text-white mb-2">${item.name}</h3>
                         <p class="text-zinc-400 text-sm leading-relaxed mb-6">${item.desc}</p>
                     </div>
-                    <a href="${item.url}" class="w-full text-center text-xs font-semibold py-2.5 rounded-lg border border-zinc-800 text-zinc-300 hover:bg-[#635BFF] hover:border-[#635BFF] hover:text-white transition-all block">Open Utility</a>
+                    <a href="${item.file}" class="w-full text-center text-xs font-semibold py-2.5 rounded-lg border border-zinc-800 text-zinc-300 hover:bg-[#635BFF] hover:border-[#635BFF] hover:text-white transition-all block">Open Utility</a>
                 </div>
             `).join('');
         }
