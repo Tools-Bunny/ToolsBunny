@@ -182,15 +182,44 @@
 
         function buildGrid(items, elementId) {
             const container = document.getElementById(elementId);
-            container.innerHTML = items.map(item => `
+            container.innerHTML = items.map((item, index) => `
                 <div class="pulse-card p-6 rounded-xl flex flex-col justify-between tool-card" data-name="${item.name.toLowerCase()}" data-desc="${item.desc.toLowerCase()}">
                     <div>
-                        <h3 class="text-lg font-semibold text-white mb-2">${item.name}</h3>
+                        <div class="flex justify-between items-start gap-2 mb-2">
+                            <h3 class="text-lg font-semibold text-white leading-tight">${item.name}</h3>
+                            <div class="flex items-center gap-1.5 shrink-0 pt-0.5">
+                                <button onclick="shareTool(event, '${item.file}', this)" title="Copy Link" class="text-zinc-500 hover:text-[#00FFC2] p-1 rounded transition-colors bg-zinc-900/50 border border-zinc-800">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 10.742l4.572-2.286m0 7.088l-4.572-2.286M19 4a2 2 0 11-4 0 2 2 0 014 0zM7 14a2 2 0 11-4 0 2 2 0 014 0zM19 20a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                </button>
+                                <button onclick="bookmarkReminder(event, '${item.name}')" title="Bookmark Tool" class="text-zinc-500 hover:text-[#635BFF] p-1 rounded transition-colors bg-zinc-900/50 border border-zinc-800">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
                         <p class="text-zinc-400 text-sm leading-relaxed mb-6">${item.desc}</p>
                     </div>
                     <a href="${item.file}" class="w-full text-center text-xs font-semibold py-2.5 rounded-lg border border-zinc-800 text-zinc-300 hover:bg-[#635BFF] hover:border-[#635BFF] hover:text-white transition-all block">Open Utility</a>
                 </div>
             `).join('');
+        }
+
+        function shareTool(event, path, buttonEl) {
+            event.preventDefault();
+            event.stopPropagation();
+            const fullUrl = window.location.origin + '/' + path;
+            navigator.clipboard.writeText(fullUrl).then(() => {
+                const originalHtml = buttonEl.innerHTML;
+                buttonEl.innerHTML = '<span class="text-[9px] text-[#00FFC2] font-sans px-0.5 font-bold">Copied!</span>';
+                setTimeout(() => { buttonEl.innerHTML = originalHtml; }, 1800);
+            }).catch(() => {
+                alert("Direct Link: " + fullUrl);
+            });
+        }
+
+        function bookmarkReminder(event, name) {
+            event.preventDefault();
+            event.stopPropagation();
+            alert(`To bookmark "${name}", please press Ctrl + D (Windows) or Cmd + D (Mac) inside your browser.`);
         }
 
         buildGrid(aiTools, 'ai-grid');
