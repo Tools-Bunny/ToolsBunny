@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Case & Multi-Format Converter - Toolsbunny</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root { --bg-obsidian: #080808; --card-void: #16161A; --accent-stripe: #635BFF; --accent-mint: #00FFC2; }
+        body { background-color: var(--bg-obsidian); color: #E4E4E7; font-family: system-ui, -apple-system, sans-serif; }
+        .pulse-shell { background-color: var(--card-void); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <header class="w-full border-b border-zinc-800 bg-black/50 backdrop-blur-md fixed top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html"><img src="https://github.com/ToolsBunny/toolsbunny/blob/main/logo.png?raw=true" alt="Logo" class="h-12 w-auto"></a>
+            <a href="../index.html" class="text-sm text-zinc-400 hover:text-white">← Matrix</a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 pt-32 pb-16 flex-grow">
+        <div id="pulse-ad-slot" class="w-full mb-8 p-4 bg-[#16161A] border border-dashed border-zinc-800 rounded-xl flex items-center justify-center min-h-[90px]">
+            <span class="text-xs text-zinc-600 font-mono uppercase">#pulse-ad-slot</span>
+        </div>
+
+        <div class="pulse-shell rounded-2xl p-6 md:p-8">
+            <h1 class="text-2xl font-bold text-white border-b border-zinc-800 pb-4 mb-6">Text Layout Transformation Space</h1>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="text-xs font-mono text-zinc-500 block mb-1">Target Source Text Input String</label>
+                    <textarea id="case-input" class="w-full h-32 bg-[#0F0F12] border border-zinc-800 rounded-xl p-3 text-xs text-zinc-300 focus:outline-none focus:border-[#635BFF]" placeholder="Type or drop paragraph configurations here..."></textarea>
+                </div>
+
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="convertCase('upper')" class="bg-zinc-900 border border-zinc-800 text-xs px-3 py-1.5 rounded hover:border-[#635BFF] text-white font-mono">UPPERCASE</button>
+                    <button onclick="convertCase('lower')" class="bg-zinc-900 border border-zinc-800 text-xs px-3 py-1.5 rounded hover:border-[#635BFF] text-white font-mono">lowercase</button>
+                    <button onclick="convertCase('title')" class="bg-zinc-900 border border-zinc-800 text-xs px-3 py-1.5 rounded hover:border-[#635BFF] text-white font-mono">Title Case</button>
+                    <button onclick="convertCase('slug')" class="bg-zinc-900 border border-zinc-800 text-xs px-3 py-1.5 rounded hover:border-[#635BFF] text-white font-mono">url-slug-format</button>
+                </div>
+
+                <div>
+                    <label class="text-xs font-mono text-zinc-500 block mb-1">Transformed Output Stream Matrix</label>
+                    <textarea id="case-output" readonly class="w-full h-32 bg-black border border-zinc-900 rounded-xl p-3 text-xs text-[#00FFC2] font-mono focus:outline-none resize-none"></textarea>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-zinc-900 bg-black/80 px-6 py-6 text-xs text-zinc-600 text-center">
+        <p>Toolsbunny Dynamic Character Processing Modules</p>
+    </footer>
+
+    <script>
+        function convertCase(type) {
+            const src = document.getElementById('case-input').value;
+            let out = "";
+
+            if(type === 'upper') out = src.toUpperCase();
+            if(type === 'lower') out = src.toLowerCase();
+            if(type === 'title') {
+                out = src.toLowerCase().split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+            }
+            if(type === 'slug') {
+                out = src.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-');
+            }
+
+            document.getElementById('case-output').value = out;
+        }
+    </script>
+</body>
+</html>

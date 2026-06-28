@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision API Image Optimizer - Toolsbunny</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root { --bg-obsidian: #080808; --card-void: #16161A; --accent-stripe: #635BFF; --accent-mint: #00FFC2; }
+        body { background-color: var(--bg-obsidian); color: #E4E4E7; font-family: system-ui, -apple-system, sans-serif; }
+        .pulse-shell { background-color: var(--card-void); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <header class="w-full border-b border-zinc-800 bg-black/50 backdrop-blur-md fixed top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html"><img src="https://github.com/ToolsBunny/toolsbunny/blob/main/logo.png?raw=true" alt="Logo" class="h-12 w-auto"></a>
+            <a href="../index.html" class="text-sm text-zinc-400 hover:text-white">← Matrix</a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 pt-32 pb-16 flex-grow">
+        <div id="pulse-ad-slot" class="w-full mb-8 p-4 bg-[#16161A] border border-dashed border-zinc-800 rounded-xl flex items-center justify-center min-h-[90px]">
+            <span class="text-xs text-zinc-600 font-mono uppercase">#pulse-ad-slot</span>
+        </div>
+
+        <div class="pulse-shell rounded-2xl p-6 md:p-8">
+            <div class="flex justify-between items-center border-b border-zinc-800 pb-4 mb-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-white">Vision API Image Optimizer</h1>
+                    <p class="text-xs text-zinc-400 mt-1">Downscale and verify pixel bounds locally to match multimodal vision specifications.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-1 bg-[#0F0F12] border border-zinc-800 rounded-xl p-4 space-y-4">
+                    <div>
+                        <label class="text-xs font-mono text-zinc-400 block mb-1">Select Local Asset</label>
+                        <input type="file" id="image-file" onchange="optimizeVisionImage()" class="w-full text-xs text-zinc-400 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:bg-zinc-800 file:text-white cursor-pointer">
+                    </div>
+                    <div>
+                        <label class="text-xs font-mono text-zinc-400 block mb-1">Max Bounds Limit</label>
+                        <select id="max-bound" onchange="optimizeVisionImage()" class="w-full bg-black border border-zinc-800 rounded p-1 text-xs text-white">
+                            <option value="512">512px (Low-Res Mode)</option>
+                            <option value="1024" selected>1024px (Standard Multi-Detail)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 border border-zinc-900 bg-black rounded-xl p-4 flex flex-col justify-between min-h-[220px]">
+                    <div id="preview-container" class="flex items-center justify-center border border-dashed border-zinc-800 rounded h-40 overflow-hidden bg-[#0A0A0C]">
+                        <span class="text-xs text-zinc-600 font-mono">No image array evaluated yet</span>
+                    </div>
+                    <div class="flex justify-between items-center text-xs font-mono text-zinc-500 mt-4">
+                        <span id="img-metrics">Dimension: 0 x 0</span>
+                        <button onclick="copyBase64()" class="text-[#00FFC2] hover:underline">Copy Base64 String</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-zinc-900 bg-black/80 px-6 py-6 text-xs text-zinc-600 text-center">
+        <p>Toolsbunny Secure Pixel Sandbox</p>
+    </footer>
+
+    <script>
+        let optimizedBase64 = "";
+        function optimizeVisionImage() {
+            const input = document.getElementById('image-file');
+            const maxDim = parseInt(document.getElementById('max-bound').value);
+            if (!input.files || !input.files[0]) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    let w = img.width;
+                    let h = img.height;
+
+                    if (w > h && w > maxDim) { h = Math.round((h * maxDim) / w); w = maxDim; }
+                    else if (h > w && h > maxDim) { w = Math.round((w * maxDim) / h); h = maxDim; }
+
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, w, h);
+
+                    optimizedBase64 = canvas.toDataURL('image/jpeg', 0.8);
+                    document.getElementById('preview-container').innerHTML = `<img src="${optimizedBase64}" class="max-h-full object-contain">`;
+                    document.getElementById('img-metrics').textContent = `Optimized Bounds: ${w}px × ${h}px`;
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+        function copyBase64() {
+            if(!optimizedBase64) { alert("Load an asset first."); return; }
+            navigator.clipboard.writeText(optimizedBase64);
+            alert("Base64 visual text token copied to dynamic clipboard.");
+        }
+    </script>
+</body>
+</html>

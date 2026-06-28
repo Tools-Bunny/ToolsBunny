@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Parameter Cheat Sheet - Toolsbunny</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root { --bg-obsidian: #080808; --card-void: #16161A; --accent-stripe: #635BFF; --accent-mint: #00FFC2; }
+        body { background-color: var(--bg-obsidian); color: #E4E4E7; font-family: system-ui, -apple-system, sans-serif; }
+        .pulse-shell { background-color: var(--card-void); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <header class="w-full border-b border-zinc-800 bg-black/50 backdrop-blur-md fixed top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html"><img src="https://github.com/ToolsBunny/toolsbunny/blob/main/logo.png?raw=true" alt="Logo" class="h-12 w-auto"></a>
+            <a href="../index.html" class="text-sm text-zinc-400 hover:text-white">← Matrix</a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 pt-32 pb-16 flex-grow">
+        <div id="pulse-ad-slot" class="w-full mb-8 p-4 bg-[#16161A] border border-dashed border-zinc-800 rounded-xl flex items-center justify-center min-h-[90px]">
+            <span class="text-xs text-zinc-600 font-mono uppercase">#pulse-ad-slot</span>
+        </div>
+
+        <div class="pulse-shell rounded-2xl p-6 md:p-8">
+            <h1 class="text-2xl font-bold text-white border-b border-zinc-800 pb-4 mb-6">LLM Parameters & Limits Directory</h1>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs font-mono text-zinc-300">
+                    <thead class="bg-black text-[#635BFF] border-b border-zinc-800">
+                        <tr>
+                            <th class="p-3">Model Core Token</th>
+                            <th class="p-3">Context Bounds</th>
+                            <th class="p-3">Output Limits</th>
+                            <th class="p-3">Max Temperature</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-zinc-900">
+                        <tr class="hover:bg-[#0F0F12]">
+                            <td class="p-3 font-semibold text-white">GPT-4o (OpenAI)</td>
+                            <td class="p-3">128,000 tks</td>
+                            <td class="p-3">4,096 tks</td>
+                            <td class="p-3">2.0</td>
+                        </tr>
+                        <tr class="hover:bg-[#0F0F12]">
+                            <td class="p-3 font-semibold text-white">Claude 3.5 Sonnet</td>
+                            <td class="p-3">200,000 tks</td>
+                            <td class="p-3">8,192 tks</td>
+                            <td class="p-3">1.0</td>
+                        </tr>
+                        <tr class="hover:bg-[#0F0F12]">
+                            <td class="p-3 font-semibold text-white">Gemini 1.5 Pro</td>
+                            <td class="p-3">2,000,000 tks</td>
+                            <td class="p-3">8,192 tks</td>
+                            <td class="p-3">2.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-zinc-900 bg-black/80 px-6 py-6 text-xs text-zinc-600 text-center">
+        <p>Toolsbunny Static Informational Matrix Core</p>
+    </footer>
+
+</body>
+</html>

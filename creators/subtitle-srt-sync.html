@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subtitle SRT File Synchronizer - Toolsbunny</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root { --bg-obsidian: #080808; --card-void: #16161A; --accent-stripe: #635BFF; --accent-mint: #00FFC2; }
+        body { background-color: var(--bg-obsidian); color: #E4E4E7; font-family: system-ui, -apple-system, sans-serif; }
+        .pulse-shell { background-color: var(--card-void); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <header class="w-full border-b border-zinc-800 bg-black/50 backdrop-blur-md fixed top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html"><img src="https://github.com/ToolsBunny/toolsbunny/blob/main/logo.png?raw=true" alt="Logo" class="h-12 w-auto"></a>
+            <a href="../index.html" class="text-sm text-zinc-400 hover:text-white">← Matrix</a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 pt-32 pb-16 flex-grow">
+        <div id="pulse-ad-slot" class="w-full mb-8 p-4 bg-[#16161A] border border-dashed border-zinc-800 rounded-xl flex items-center justify-center min-h-[90px]">
+            <span class="text-xs text-zinc-600 font-mono uppercase">#pulse-ad-slot</span>
+        </div>
+
+        <div class="pulse-shell rounded-2xl p-6 md:p-8">
+            <div class="flex justify-between items-center border-b border-zinc-800 pb-4 mb-6">
+                <h1 class="text-2xl font-bold text-white">SRT Subtitle Time-Shifter</h1>
+                <button onclick="shiftSubtitles()" class="bg-[#635BFF] text-white text-xs px-4 py-1.5 rounded">Execute Shift</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-1 bg-[#0F0F12] border border-zinc-800 p-4 rounded-xl space-y-4 h-fit">
+                    <div>
+                        <label class="text-xs font-mono text-zinc-400 block mb-1">Time Offset Change (ms)</label>
+                        <input type="number" id="time-shift-ms" value="1000" class="w-full bg-black border border-zinc-800 rounded p-2 text-xs text-white font-mono" placeholder="e.g., 1000 or -500">
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 space-y-4">
+                    <div>
+                        <label class="text-xs font-mono text-zinc-500 block mb-1">Raw SRT Input File</label>
+                        <textarea id="srt-input" class="w-full h-32 bg-[#0F0F12] border border-zinc-800 rounded-xl p-3 text-xs text-zinc-300 font-mono focus:outline-none focus:border-[#635BFF]" placeholder="1&#10;00:00:01,000 --> 00:00:04,000&#10;Welcome to the channel!"></textarea>
+                    </div>
+                    <div>
+                        <label class="text-xs font-mono text-zinc-500 block mb-1">Synchronized SRT Output</label>
+                        <textarea id="srt-output" readonly class="w-full h-32 bg-black border border-zinc-900 rounded-xl p-3 text-xs text-[#00FFC2] font-mono focus:outline-none resize-none"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-zinc-900 bg-black/80 px-6 py-6 text-xs text-zinc-600 text-center">
+        <p>Toolsbunny Content Automation Platform</p>
+    </footer>
+
+    <script>
+        function shiftTimeStr(timeStr, offsetMs) {
+            let parts = timeStr.split(/:|,/);
+            if(parts.length < 4) return timeStr;
+            let ms = parseInt(parts[0])*3600000 + parseInt(parts[1])*60000 + parseInt(parts[2])*1000 + parseInt(parts[3]);
+            ms += offsetMs;
+            if(ms < 0) ms = 0;
+
+            let hrs = Math.floor(ms / 3600000); ms %= 3600000;
+            let mins = Math.floor(ms / 60000); ms %= 60000;
+            let secs = Math.floor(ms / 1000); ms %= 1000;
+
+            return `${String(hrs).padStart(2,'0')}:${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')},${String(ms).padStart(3,'0')}`;
+        }
+
+        function shiftSubtitles() {
+            const src = document.getElementById('srt-input').value;
+            const shift = parseInt(document.getElementById('time-shift-ms').value) || 0;
+            
+            let lines = src.split('\n');
+            let output = lines.map(line => {
+                if(line.includes('-->')) {
+                    let parts = line.split(' --> ');
+                    return `${shiftTimeStr(parts[0], shift)} --> ${shiftTimeStr(parts[1], shift)}`;
+                }
+                return line;
+            }).join('\n');
+
+            document.getElementById('srt-output').value = output;
+        }
+    </script>
+</body>
+</html>

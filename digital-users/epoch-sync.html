@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unix Epoch Timestamp Sync Engine - Toolsbunny</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root { --bg-obsidian: #080808; --card-void: #16161A; --accent-stripe: #635BFF; --accent-mint: #00FFC2; }
+        body { background-color: var(--bg-obsidian); color: #E4E4E7; font-family: system-ui, -apple-system, sans-serif; }
+        .pulse-shell { background-color: var(--card-void); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <header class="w-full border-b border-zinc-800 bg-black/50 backdrop-blur-md fixed top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html"><img src="https://github.com/ToolsBunny/toolsbunny/blob/main/logo.png?raw=true" alt="Logo" class="h-12 w-auto"></a>
+            <a href="../index.html" class="text-sm text-zinc-400 hover:text-white">← Matrix</a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 pt-32 pb-16 flex-grow">
+        <div id="pulse-ad-slot" class="w-full mb-8 p-4 bg-[#16161A] border border-dashed border-zinc-800 rounded-xl flex items-center justify-center min-h-[90px]">
+            <span class="text-xs text-zinc-600 font-mono uppercase">#pulse-ad-slot</span>
+        </div>
+
+        <div class="pulse-shell rounded-2xl p-6 md:p-8">
+            <div class="flex justify-between items-center border-b border-zinc-800 pb-4 mb-6">
+                <h1 class="text-2xl font-bold text-white">Epoch Time-Stamp Core Sync</h1>
+                <button onclick="syncCurrentEpoch()" class="bg-[#635BFF] text-white text-xs px-3 py-1.5 rounded font-mono">Sync Realtime</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-[#0F0F12] border border-zinc-800 p-4 rounded-xl space-y-4">
+                    <div>
+                        <label class="text-xs font-mono text-zinc-400 block mb-1">Raw Unix Epoch (Seconds)</label>
+                        <input type="number" id="epoch-input" value="1782676200" oninput="convertEpochToDate()" class="w-full bg-black border border-zinc-800 rounded p-2 text-xs text-white font-mono">
+                    </div>
+                </div>
+
+                <div class="bg-black border border-zinc-900 rounded-xl p-5 flex flex-col justify-center text-center">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase block">Parsed Date Layout Metric</span>
+                    <span id="epoch-date-output" class="text-sm font-mono font-bold text-[#00FFC2] my-2">...</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-zinc-900 bg-black/80 px-6 py-6 text-xs text-zinc-600 text-center">
+        <p>Toolsbunny High-Resolution Universal Alignment Engines</p>
+    </footer>
+
+    <script>
+        function convertEpochToDate() {
+            const val = parseInt(document.getElementById('epoch-input').value) || 0;
+            const d = new Date(val * 1000);
+            document.getElementById('epoch-date-output').textContent = d.toUTCString();
+        }
+        function syncCurrentEpoch() {
+            const now = Math.floor(Date.now() / 1000);
+            document.getElementById('epoch-input').value = now;
+            convertEpochToDate();
+        }
+        syncCurrentEpoch();
+    </script>
+</body>
+</html>

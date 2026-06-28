@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Browser Info Blueprint - Toolsbunny</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root { --bg-obsidian: #080808; --card-void: #16161A; --accent-stripe: #635BFF; --accent-mint: #00FFC2; }
+        body { background-color: var(--bg-obsidian); color: #E4E4E7; font-family: system-ui, -apple-system, sans-serif; }
+        .pulse-shell { background-color: var(--card-void); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <header class="w-full border-b border-zinc-800 bg-black/50 backdrop-blur-md fixed top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html"><img src="https://github.com/ToolsBunny/toolsbunny/blob/main/logo.png?raw=true" alt="Logo" class="h-12 w-auto"></a>
+            <a href="../index.html" class="text-sm text-zinc-400 hover:text-white">← Matrix</a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 pt-32 pb-16 flex-grow">
+        <div id="pulse-ad-slot" class="w-full mb-8 p-4 bg-[#16161A] border border-dashed border-zinc-800 rounded-xl flex items-center justify-center min-h-[90px]">
+            <span class="text-xs text-zinc-600 font-mono uppercase">#pulse-ad-slot</span>
+        </div>
+
+        <div class="pulse-shell rounded-2xl p-6 md:p-8">
+            <h1 class="text-2xl font-bold text-white border-b border-zinc-800 pb-4 mb-6">Client Architecture Blueprint</h1>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-4 bg-black border border-zinc-900 rounded-xl">
+                    <span class="text-[10px] font-mono uppercase text-zinc-500 block">Viewport Matrix Boundary</span>
+                    <span id="bp-screen" class="text-sm font-mono text-[#00FFC2] font-semibold mt-1 block">Detecting...</span>
+                </div>
+                <div class="p-4 bg-black border border-zinc-900 rounded-xl">
+                    <span class="text-[10px] font-mono uppercase text-zinc-500 block">Engine Core Language Configuration</span>
+                    <span id="bp-lang" class="text-sm font-mono text-white font-semibold mt-1 block">Detecting...</span>
+                </div>
+                <div class="p-4 bg-black border border-zinc-900 rounded-xl sm:col-span-2">
+                    <span class="text-[10px] font-mono uppercase text-zinc-500 block">User Agent Vector Array</span>
+                    <span id="bp-agent" class="text-xs font-mono text-zinc-400 mt-1 block break-all">Detecting...</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-zinc-900 bg-black/80 px-6 py-6 text-xs text-zinc-600 text-center">
+        <p>Toolsbunny Client-Side Environmental Inspector Matrix</p>
+    </footer>
+
+    <script>
+        function queryBlueprintMetrics() {
+            document.getElementById('bp-screen').textContent = `${window.innerWidth} x ${window.innerHeight} (Available: ${screen.width} x ${screen.height})`;
+            document.getElementById('bp-lang').textContent = navigator.language || "Unknown Language Local Node";
+            document.getElementById('bp-agent').textContent = navigator.userAgent;
+        }
+        window.onload = queryBlueprintMetrics;
+        window.onresize = queryBlueprintMetrics;
+    </script>
+</body>
+</html>
