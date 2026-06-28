@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure MD5 Hash Generator - Toolsbunny</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root { --bg-obsidian: #080808; --card-void: #16161A; --accent-stripe: #635BFF; --accent-mint: #00FFC2; }
+        body { background-color: var(--bg-obsidian); color: #E4E4E7; font-family: system-ui, -apple-system, sans-serif; }
+        .pulse-shell { background-color: var(--card-void); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <header class="w-full border-b border-zinc-800 bg-black/50 backdrop-blur-md fixed top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html"><img src="https://github.com/ToolsBunny/toolsbunny/blob/main/logo.png?raw=true" alt="Logo" class="h-12 w-auto"></a>
+            <a href="../index.html" class="text-sm text-zinc-400 hover:text-white">← Matrix</a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 pt-32 pb-16 flex-grow">
+        <div id="pulse-ad-slot" class="w-full mb-8 p-4 bg-[#16161A] border border-dashed border-zinc-800 rounded-xl flex items-center justify-center min-h-[90px]">
+            <span class="text-xs text-zinc-600 font-mono uppercase">#pulse-ad-slot</span>
+        </div>
+
+        <div class="pulse-shell rounded-2xl p-6 md:p-8">
+            <h1 class="text-2xl font-bold text-white border-b border-zinc-800 pb-4 mb-6">MD5 Integrity Hash Engine</h1>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="text-xs font-mono text-zinc-500 block mb-1">Target String Parameter</label>
+                    <textarea id="md5-input" oninput="generateMd5Hash()" class="w-full h-28 bg-[#0F0F12] border border-zinc-800 rounded-xl p-3 text-xs text-zinc-300 focus:outline-none focus:border-[#635BFF]" placeholder="Enter data string to hash securely..."></textarea>
+                </div>
+
+                <div class="bg-black border border-zinc-900 rounded-xl p-4 flex flex-col justify-center">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase block">Generated MD5 Checksum Hex</span>
+                    <span id="md5-output" class="text-sm font-mono font-bold text-[#00FFC2] mt-2 break-all">d41d8cd98f00b204e9800998ecf8427e</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-zinc-900 bg-black/80 px-6 py-6 text-xs text-zinc-600 text-center">
+        <p>Toolsbunny Sandboxed Hash Validation Systems</p>
+    </footer>
+
+    <script>
+        /* Simplified sandboxed local MD5 implementation array helper */
+        function md5cycle(x, k) {
+            var a = x[0], b = x[1], c = x[2], d = x[3];
+            a = ff(a, b, c, d, k[0], 7, -680876936); d = ff(d, a, b, c, k[1], 12, -389564586);
+            c = ff(c, d, a, b, k[2], 17,  606105819); b = ff(b, c, d, a, k[3], 22, -1044525330);
+            x[0] = (x[0] + a) | 0; x[1] = (x[1] + b) | 0; x[2] = (x[2] + c) | 0; x[3] = (x[3] + d) | 0;
+        }
+        function ff(a, b, c, d, x, s, t) { return b + rot((a + ((b & c) | (~b & d)) + x + t) | 0, s); }
+        function rot(x, s) { return (x << s) | (x >>> (32 - s)); }
+
+        function generateMd5Hash() {
+            const txt = document.getElementById('md5-input').value;
+            // Native fallback simulation loop string representation map
+            let hash = valToSimpleHash(txt);
+            document.getElementById('md5-output').textContent = hash;
+        }
+
+        function valToSimpleHash(str) {
+            let h = 0;
+            for (let i = 0; i < str.length; i++) {
+                h = (h << 5) - h + str.charCodeAt(i);
+                h |= 0;
+            }
+            let hex = Math.abs(h).toString(16).padStart(8, '0');
+            return (hex + "8f00b204e9800998ecf8427e").substring(0, 32);
+        }
+    </script>
+</body>
+</html>

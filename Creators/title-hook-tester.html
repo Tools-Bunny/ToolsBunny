@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Title & Hook Tester - Toolsbunny</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root { --bg-obsidian: #080808; --card-void: #16161A; --accent-stripe: #635BFF; --accent-mint: #00FFC2; }
+        body { background-color: var(--bg-obsidian); color: #E4E4E7; font-family: system-ui, -apple-system, sans-serif; }
+        .pulse-shell { background-color: var(--card-void); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <header class="w-full border-b border-zinc-800 bg-black/50 backdrop-blur-md fixed top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html"><img src="https://github.com/ToolsBunny/toolsbunny/blob/main/logo.png?raw=true" alt="Logo" class="h-12 w-auto"></a>
+            <a href="../index.html" class="text-sm text-zinc-400 hover:text-white">← Matrix</a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 pt-32 pb-16 flex-grow">
+        <div id="pulse-ad-slot" class="w-full mb-8 p-4 bg-[#16161A] border border-dashed border-zinc-800 rounded-xl flex items-center justify-center min-h-[90px]">
+            <span class="text-xs text-zinc-600 font-mono uppercase">#pulse-ad-slot</span>
+        </div>
+
+        <div class="pulse-shell rounded-2xl p-6 md:p-8">
+            <div class="flex justify-between items-center border-b border-zinc-800 pb-4 mb-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-white">Video Title & Hook Tester</h1>
+                    <p class="text-xs text-zinc-400 mt-1">Audit headlines and opening hooks for psychological velocity and clickability.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 space-y-4">
+                    <div>
+                        <label class="text-xs font-mono text-zinc-400 block mb-1">Proposed Video Title</label>
+                        <input type="text" id="video-title" oninput="testTitle()" class="w-full bg-[#0F0F12] border border-zinc-800 rounded-lg p-3 text-sm focus:outline-none focus:border-[#635BFF]" placeholder="e.g., How I Broke the Algorithmic Matrix With This Secret Tool">
+                    </div>
+                    <div>
+                        <label class="text-xs font-mono text-zinc-400 block mb-1">Opening Hook Copy (First 5 Seconds)</label>
+                        <textarea id="video-hook" oninput="testTitle()" class="w-full h-32 bg-[#0F0F12] border border-zinc-800 rounded-lg p-3 text-sm focus:outline-none focus:border-[#635BFF]" placeholder="e.g., Most people think the algorithm is random, but they're missing this one foundational truth..."></textarea>
+                    </div>
+                </div>
+
+                <div class="bg-[#0F0F12] border border-zinc-800 rounded-xl p-5 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-mono text-zinc-400 block mb-4">Engagement Analytics</span>
+                        <div class="space-y-4">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono text-zinc-500 block">Title Length Status</span>
+                                <span id="title-length-val" class="text-xs font-bold text-white">0 / 60 chars</span>
+                            </div>
+                            <div>
+                                <span class="text-[10px] uppercase font-mono text-zinc-500 block">Psychological Score</span>
+                                <span id="psych-score" class="text-2xl font-bold text-[#00FFC2]">0%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-zinc-900/50 p-3 rounded-lg border border-zinc-800/50 mt-4">
+                        <span class="text-[10px] uppercase font-mono text-zinc-500 block">Optimization Insight</span>
+                        <span id="optimization-tip" class="text-xs text-zinc-400 block mt-1">Awaiting text parameter inputs...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full border-t border-zinc-900 bg-black/80 px-6 py-6 text-xs text-zinc-600 text-center">
+        <p>Toolsbunny Content Engineering Ecosystem</p>
+    </footer>
+
+    <script>
+        function testTitle() {
+            const title = document.getElementById('video-title').value.trim();
+            const hook = document.getElementById('video-hook').value.trim();
+            
+            document.getElementById('title-length-val').textContent = `${title.length} / 60 chars`;
+            if (title.length > 60) {
+                document.getElementById('title-length-val').className = "text-xs font-bold text-red-400";
+            } else {
+                document.getElementById('title-length-val').className = "text-xs font-bold text-white";
+            }
+
+            let score = 0;
+            let triggers = ['secret', 'how i', 'broke', 'missing', 'truth', 'stop', 'hidden', 'why', 'mistake'];
+            
+            triggers.forEach(word => {
+                if(title.toLowerCase().includes(word)) score += 35;
+                if(hook.toLowerCase().includes(word)) score += 15;
+            });
+
+            score = Math.min(score, 100);
+            if(title.length > 10 && score === 0) score = 25; // Base visibility points
+
+            document.getElementById('psych-score').textContent = title ? `${score}%` : '0%';
+
+            let tip = "Enter copy components to extract algorithmic structural weights.";
+            if(title.length > 60) tip = "Title is too long. It will be truncated in user smartphone feeds.";
+            else if(score > 70) tip = "Strong structural velocity. High presence of cognitive dissonance or curiosity loops.";
+            else if(title.length > 0) tip = "Consider adding high-impact conversion power words (e.g., Mistake, Proof, System).";
+
+            document.getElementById('optimization-tip').textContent = tip;
+        }
+    </script>
+</body>
+</html>
