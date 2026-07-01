@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Line Counter & Filter Terminal - Toolsbunny</title>
+<meta name="description" content="Quickly count lines, characters, and filter your text content. An essential utility for data cleanup and code analysis.">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         :root { --bg-obsidian: #080808; --card-void: #16161A; --accent-stripe: #635BFF; --accent-mint: #00FFC2; }
@@ -35,6 +36,22 @@
                 <textarea id="line-payload-src" oninput="auditRowMetrics()" class="w-full h-36 bg-[#0F0F12] border border-zinc-800 rounded-xl p-3 text-xs text-zinc-300 font-mono focus:outline-none focus:border-[#635BFF]" placeholder="Drop row listings here to compute line length metrics instantly..."></textarea>
             </div>
         </div>
+<section class="mt-12 space-y-8 border-t border-zinc-900 pt-12">
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-zinc-900/30 p-6 rounded-xl border border-zinc-800">
+            <h3 class="text-white font-semibold mb-2">Detailed Metrics</h3>
+            <p class="text-sm text-zinc-400">Get instant counts for total lines, words, and characters—including support for excluding empty lines or comments.</p>
+        </div>
+        <div class="bg-zinc-900/30 p-6 rounded-xl border border-zinc-800">
+            <h3 class="text-white font-semibold mb-2">Data Filtering</h3>
+            <p class="text-sm text-zinc-400">Strip unnecessary whitespace or filter lines based on specific patterns to streamline your data processing tasks.</p>
+        </div>
+        <div class="bg-zinc-900/30 p-6 rounded-xl border border-zinc-800">
+            <h3 class="text-white font-semibold mb-2">Development Ready</h3>
+            <p class="text-sm text-zinc-400">Perfect for checking file lengths, log file analysis, or ensuring your code documentation meets style requirements.</p>
+        </div>
+    </div>
+</section>
     </main>
 
     <footer class="w-full border-t border-zinc-900 bg-black/80 px-6 py-6 text-xs text-zinc-600 text-center">
