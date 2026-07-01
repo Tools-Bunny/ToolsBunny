@@ -1,121 +1,50 @@
----
-layout: default
-title: "Toolsbunny | Free Privacy-First Developer & Creator Utilities"
----
+<!-- Header Section -->
+<header class="w-full bg-[#0A0A0A] border-b border-zinc-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="/" class="text-white font-black text-xl tracking-tighter">TOOLSBUNNY</a>
 
-<main class="w-full max-w-7xl mx-auto px-6 pt-32 pb-16 flex-grow">
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex gap-6 text-zinc-400 text-sm">
+            <a href="#ai-tools" class="hover:text-white">AI Tools</a>
+            <a href="#creators" class="hover:text-white">Creators</a>
+            <a href="#digital-users" class="hover:text-white">Digital Users</a>
+        </nav>
 
+        <!-- Mobile Hamburger Button -->
+        <button id="menu-toggle" class="md:hidden text-white p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0A0A0A] border-b border-zinc-800 p-4 flex flex-col gap-4">
+        <a href="#ai-tools" class="text-zinc-300">AI Tools</a>
+        <a href="#creators" class="text-zinc-300">Creators</a>
+        <a href="#digital-users" class="text-zinc-300">Digital Users</a>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="w-full max-w-7xl mx-auto px-4 pt-16 pb-16 flex-grow">
+    <!-- Hero Section -->
     <div class="text-center mb-16">
         <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-4 gradient-text">Engineered Client-Side Utilities</h1>
         <p class="text-zinc-400 max-w-2xl mx-auto text-base md:text-lg">Zero server latency. 100% processing privacy. 45 specialized web tools designed for developers, AI pioneers, and content creators. <span class="text-[#00FFC2] font-semibold">100% Free Forever.</span></p>
-        
-        <div class="flex flex-wrap justify-center gap-3 mt-8">
-            <a href="#ai-tools" class="px-4 py-2 bg-[#16161A] border border-zinc-800 rounded-lg text-xs font-medium text-zinc-300 hover:border-[#635BFF] hover:text-white transition-all">AI Tools</a>
-            <a href="#creators" class="px-4 py-2 bg-[#16161A] border border-zinc-800 rounded-lg text-xs font-medium text-zinc-300 hover:border-[#635BFF] hover:text-white transition-all">Creators</a>
-            <a href="#digital-users" class="px-4 py-2 bg-[#16161A] border border-zinc-800 rounded-lg text-xs font-medium text-zinc-300 hover:border-[#635BFF] hover:text-white transition-all">Digital Users</a>
-        </div>
     </div>
 
-    <section id="ai-tools" class="mb-16 tool-category-section">
-        <div class="flex items-center gap-3 mb-8 border-b border-zinc-800 pb-3">
-            <span class="p-2 rounded-lg bg-[#635BFF]/10 text-[#635BFF]">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-            </span>
-            <h2 class="text-2xl font-bold tracking-tight text-white">AI Utilities Matrix</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 tool-grid" id="ai-grid"></div>
-    </section>
-
-    <section id="creators" class="mb-16 tool-category-section">
-        <div class="flex items-center gap-3 mb-8 border-b border-zinc-800 pb-3">
-            <span class="p-2 rounded-lg bg-[#00FFC2]/10 text-[#00FFC2]">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-            </span>
-            <h2 class="text-2xl font-bold tracking-tight text-white">Creator Systems Workspace</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 tool-grid" id="creators-grid"></div>
-    </section>
-
-    <section id="digital-users" class="mb-16 tool-category-section">
-        <div class="flex items-center gap-3 mb-8 border-b border-zinc-800 pb-3">
-            <span class="p-2 rounded-lg bg-zinc-700/30 text-zinc-300">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-            </span>
-            <h2 class="text-2xl font-bold tracking-tight text-white">Power Digital Architecture</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 tool-grid" id="digital-grid"></div>
-    </section>
-
-    <section class="mt-24 border-t border-zinc-800 pt-16 max-w-4xl mx-auto text-zinc-400 text-sm leading-relaxed font-sans">
-        <h2 class="text-2xl font-bold text-white mb-6 tracking-tight">Decentralized Web Engineering for Enterprise Workflows</h2>
-        <p class="mb-4">Modern software development pipelines, programmatic content creation arrays, and algorithmic systems engineering structures demand immediate execution capabilities without micro-latency performance drops. Toolsbunny delivers a premium, zero-egress dashboard comprising 45 highly specialized client-side nodes. By processing computing sequences entirely within local memory space via modern web browser execution frameworks, operational engineering teams completely eliminate the data leakage pathways inherent to standard server-dependent applications.</p>
-        <p class="mb-12">Whether diagnosing production JSON structure faults, measuring prompt parameters inside language model context boundaries, tracking media container layout safe zones for digital advertising syndication, or generating cryptographically secure infrastructure passes, Toolsbunny acts as an execution ecosystem prioritizing compliance across high-scrutiny operational environments.</p>
-
-        <h3 class="text-xl font-bold text-white mb-6 tracking-tight">Frequently Asked Questions</h3>
-        <div class="space-y-6">
-            <div class="bg-[#121214] p-5 rounded-xl border border-zinc-900">
-                <h4 class="text-zinc-200 font-semibold mb-2 text-base">How does Toolsbunny guarantee strict data privacy for enterprise projects?</h4>
-                <p class="text-zinc-400">Every pipeline script, text block, data string, or file configuration array executed on our platform operates entirely via local client-side Javascript. No data packets cross external network ports. This local isolation makes all 45 web tools fully secure against external scraping loops, aligning seamlessly with SOC2, GDPR, CCPA, and corporate data security paradigms.</p>
-            </div>
-            <div class="bg-[#121214] p-5 rounded-xl border border-zinc-900">
-                <h4 class="text-zinc-200 font-semibold mb-2 text-base">Are there rate tracking constraints or API usage thresholds on these tools?</h4>
-                <p class="text-zinc-400">No. Because execution architectures are decentralized across user hardware profiles rather than structured on server instances, you face zero throughput caps or daily subscription gates. Engineering groups, marketing workspaces, and automated scripting layouts can leverage the utilities indefinitely without encountering platform restriction boundaries.</p>
-            </div>
-            <div class="bg-[#121214] p-5 rounded-xl border border-zinc-900">
-                <h4 class="text-zinc-200 font-semibold mb-2 text-base">Can these developer utilities be executed under offline environment conditions?</h4>
-                <p class="text-zinc-400">Yes. Once the core assets are compiled inside your active browser instance memory shell, the structural utilities function completely without an active internet hookup. This offline compatibility ensures continuous productivity for distributed remote development units tracking sensitive data arrays inside restricted networks.</p>
-            </div>
-        </div>
-    </section>
+    <!-- Tool Sections (ai-grid, creators-grid, digital-grid) -->
+    <!-- Keep your existing <section> blocks here, but ensure they are inside this main tag -->
+    
 </main>
 
 <script>
-    // These functions were previously defined in your full code. 
-    // They are required to render the tool grids correctly.
-    const aiTools = [ { name: "Token Counter & Cost Calculator", file: "ai-tools/token-counter.html", desc: "Calculate pricing models and count real-time LLM context tokens." }, { name: "System Prompt Injector Simulator", file: "ai-tools/system-prompt-injector.html", desc: "Simulate, structure, and safe-check system prompts against instruction bypasses." }, { name: "Markdown & LaTeX Stripper", file: "ai-tools/markdown-latex-stripper.html", desc: "Clean synthetic LLM text formatting outputs down to plain editorial copy." }, { name: "Prompt Variations Generator", file: "ai-tools/prompt-variations.html", desc: "Generate multi-angle programmatic prompt matrices for robust testing." }, { name: "AI Output Diff Space", file: "ai-tools/ai-diff-space.html", desc: "Compare generational variance between multiple AI response runs side-by-side." }, { name: "Smart Prompt Chunking Station", file: "ai-tools/prompt-chunking.html", desc: "Automate text division patterns cleanly inside strict LLM window token limits." }, { name: "Tone & Readability Dashboard", file: "ai-tools/tone-dashboard.html", desc: "Audit structural voice attributes and complexity indices of computational texts." }, { name: "Chat History Payload Formatter", file: "ai-tools/chat-payload-formatter.html", desc: "Convert standard conversational text files instantly into API structural JSON code arrays." }, { name: "Vision API Image Optimizer", file: "ai-tools/vision-image-optimizer.html", desc: "Scale, down-sample, and adjust dimensions for visual parsing engine inputs." }, { name: "Hyperparameter Visualizer", file: "ai-tools/hyperparameter-visualizer.html", desc: "Map context weights interactively to conceptualize fine-tuning parameter scales." }, { name: "Local Embedding Similarity Calculator", file: "ai-tools/embedding-similarity.html", desc: "Run client-side cosine similarity comparisons over text arrays safely." }, { name: "JSON Structured Schema Lint Space", file: "ai-tools/json-schema-lint.html", desc: "Verify complex programmatic structural configurations instantly against JSON parameters." }, { name: "CSV Few-Shot Dataset Factory", file: "ai-tools/csv-dataset-factory.html", desc: "Format explicit user and system message pairs smoothly to construct LLM dataset files." }, { name: "System Parameter Cheat Sheet", file: "ai-tools/system-parameter-cheatsheet.html", desc: "Quick-reference directory mapping system constraints across global AI providers." }, { name: "API Infrastructure Status Monitor", file: "ai-tools/api-status-monitor.html", desc: "Check localized developer operational status markers across major web nodes." } ];
-    const creatorTools = [ { name: "Video Title & Hook Tester", file: "creators/title-hook-tester.html", desc: "Preview and optimize titles across modern video discovery dimensions." }, { name: "Description & Keyword Generator", file: "creators/description-keyword-builder.html", desc: "Convert creative strings to balanced target content indexing metadata smoothly." }, { name: "Aspect Ratio Video Crop Guide", file: "creators/aspect-ratio-guide.html", desc: "Analyze structural composition limits across variable social framing profiles." }, { name: "Audio File Format Converter", file: "creators/audio-format-converter.html", desc: "Transcode multi-format audio blocks smoothly within modern digital web pipelines." }, { name: "Thumbnail Text Contrast Analyzer", file: "creators/thumbnail-contrast.html", desc: "Verify high-visibility accessibility readouts over custom media content layers." }, { name: "Subtitle SRT File Synchronizer", file: "creators/subtitle-srt-sync.html", desc: "Adjust framing layout and offset values swiftly across caption timelines." }, { name: "Social Media Post Splitter", file: "creators/social-post-splitter.html", desc: "Deconstruct continuous text sequences cleanly into character-optimized threads." }, { name: "Interactive Video Frame Rate Meter", file: "creators/video-framerate-meter.html", desc: "Simulate structural temporal consistency intervals inside complex video pipelines." }, { name: "RGB to HEX Color Matrix Studio", file: "creators/rgb-hex-studio.html", desc: "Convert dynamic design color values smoothly between raw processing parameters." }, { name: "Video Bitrate & Storage Calculator", file: "creators/video-bitrate-calculator.html", desc: "Evaluate exact digital storage profiles against pipeline bitrate targets." }, { name: "Text to Voiceover Script Pacer", file: "creators/script-pacer.html", desc: "Track structural runtime lengths alongside customizable dialogue pace limits." }, { name: "Interactive Hex Grid Pattern Mock", file: "creators/hex-grid-mock.html", desc: "Construct spatial vector arrays utilizing clean programmatic math foundations." }, { name: "Video Safe-Zone Template Overlay", file: "creators/video-safe-zone.html", desc: "Check visual margin profiles to protect critical elements from text truncation bugs." }, { name: "Creator Sponsorship Cost Calculator", file: "creators/sponsor-cost-calculator.html", desc: "Map channel audience earnings algorithms across dynamic variable shifts." }, { name: "Media File Extension Format Picker", file: "creators/media-extension-picker.html", desc: "Deploy perfectly structured, clean media asset profiles for fast distribution steps." } ];
-    const digitalTools = [ { name: "Secure Password & Passphrase Generator", file: "digital-users/password-generator.html", desc: "Deploy cryptographically secure variable hashes without client-side data leaks." }, { name: "Text Case & Multi-Format Converter", file: "digital-users/text-case-converter.html", desc: "Sanitize structural text elements cleanly using explicit casing conventions." }, { name: "Client Browser Info Blueprint", file: "digital-users/browser-blueprint.html", desc: "Evaluate connected operational nodes and screen environment features instantly." }, { name: "Unix Epoch Timestamp Sync Engine", file: "digital-users/epoch-sync.html", desc: "Map temporal parameters accurately across local environments and server systems." }, { name: "Base64 String Encoder & Decoder", file: "digital-users/base64-encoder-decoder.html", desc: "Process variable asset parameters securely into standardized string sequences." }, { name: "URL Component Encoder & Decoder", file: "digital-users/url-encoder-decoder.html", desc: "Format dynamic routing elements to guarantee network integrity across configurations." }, { name: "Secure MD5 Hash Generator", file: "digital-users/md5-hash-generator.html", desc: "Compute localized data verification hashes instantly using browser resources." }, { name: "Color Blindness Vision Simulator", file: "digital-users/vision-simulator.html", desc: "Audit visual contrast patterns across alternative processing profiles interactively." }, { name: "Lorem Ipsum Content Vector Factory", file: "digital-users/lorem-ipsum-factory.html", desc: "Construct structural design mock sequences safely matching preset formatting parameters." }, { name: "Multi-Metric Distance Converter", file: "digital-users/distance-converter.html", desc: "Calculate dimensional scaling metrics smoothly across global mathematical targets." }, { name: "Binary to Text Data Matrix Decoder", file: "digital-users/binary-text-decoder.html", desc: "Translate core system raw structures cleanly back to semantic word strings." }, { name: "Local Line Counter & Filter Terminal", file: "digital-users/line-counter-filter.html", desc: "Sift through complex documentation strings cleanly without sending records to network paths." }, { name: "Local Browser History Metadata Sandbox", file: "digital-users/history-sandbox.html", desc: "Analyze historical browser interaction configurations completely within client layers." }, { name: "Duplicate Text Row Purge Filter", file: "digital-users/duplicate-row-purger.html", desc: "Sanitize repetitive tabular string arrays using smart inline logic." }, { name: "Aspect Ratio Visualizer Calculator", file: "digital-users/aspect-ratio-calc.html", desc: "Construct balanced structural layout frameworks across multi-format web profiles." } ];
+    // Toggle Mobile Menu
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
 
-    function buildGrid(items, elementId) {
-        const container = document.getElementById(elementId);
-        container.innerHTML = items.map((item) => `
-            <div class="pulse-card p-6 rounded-xl flex flex-col justify-between tool-card" data-name="${item.name.toLowerCase()}" data-desc="${item.desc.toLowerCase()}">
-                <div>
-                    <div class="flex justify-between items-start gap-2 mb-2">
-                        <h3 class="text-lg font-semibold text-white leading-tight">${item.name}</h3>
-                        <div class="flex items-center gap-1.5 shrink-0 pt-0.5">
-                            <button onclick="shareTool(event, '${item.file}', this)" title="Copy Link" class="text-zinc-500 hover:text-[#00FFC2] p-1 rounded transition-colors bg-zinc-900/50 border border-zinc-800">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 10.742l4.572-2.286m0 7.088l-4.572-2.286M19 4a2 2 0 11-4 0 2 2 0 014 0zM7 14a2 2 0 11-4 0 2 2 0 014 0zM19 20a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-                    <p class="text-zinc-400 text-sm leading-relaxed mb-6">${item.desc}</p>
-                </div>
-                <a href="${item.file}" class="w-full text-center text-xs font-semibold py-2.5 rounded-lg border border-zinc-800 text-zinc-300 hover:bg-[#635BFF] hover:border-[#635BFF] hover:text-white transition-all block">Open Utility</a>
-            </div>
-        `).join('');
-    }
-
-    function shareTool(event, path, buttonEl) {
-        event.preventDefault();
-        event.stopPropagation();
-        const fullUrl = window.location.origin + '/' + path;
-        navigator.clipboard.writeText(fullUrl);
-        const originalHtml = buttonEl.innerHTML;
-        buttonEl.innerHTML = '<span class="text-[9px] text-[#00FFC2] font-sans px-0.5 font-bold">Copied!</span>';
-        setTimeout(() => { buttonEl.innerHTML = originalHtml; }, 1800);
-    }
-
-    buildGrid(aiTools, 'ai-grid');
-    buildGrid(creatorTools, 'creators-grid');
-    buildGrid(digitalTools, 'digital-grid');
-
-    function filterTools() {
-        const query = document.getElementById('global-search').value.toLowerCase();
-        document.querySelectorAll('.tool-card').forEach(card => {
-            const name = card.getAttribute('data-name');
-            const desc = card.getAttribute('data-desc');
-            card.style.display = (name.includes(query) || desc.includes(query)) ? 'flex' : 'none';
-        });
-    }
+    // Your existing grid building logic (buildGrid, shareTool, etc.) goes here
 </script>
