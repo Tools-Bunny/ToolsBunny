@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Toolsbunny Engineering Blog</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root { --bg-obsidian: #080808; --card-void: #16161A; --accent-stripe: #635BFF; --accent-mint: #00FFC2; }
+        body { background-color: var(--bg-obsidian); color: #E4E4E7; font-family: system-ui, -apple-system, sans-serif; }
+        .blog-card { background-color: var(--card-void); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s ease; }
+        .blog-card:hover { border-color: #00FFC2; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <header class="w-full border-b border-zinc-800 bg-black/50 backdrop-blur-md fixed top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="active:scale-95 transition-transform">
+                <img src="https://github.com/ToolsBunny/toolsbunny/blob/main/logo.png?raw=true" alt="Toolsbunny Logo" class="h-12 w-auto object-contain">
+            </a>
+            <nav class="flex items-center gap-6 text-sm font-medium text-zinc-400">
+                <a href="index.html" class="hover:text-white transition-colors">← Back to Tools Matrix</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 pt-32 pb-16 flex-grow">
+        {{ content }}
+    </main>
+
+    <footer class="w-full border-t border-zinc-900 bg-black/80 px-6 py-8 text-xs text-zinc-500">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <img src="https://github.com/ToolsBunny/toolsbunny/blob/main/logo.png?raw=true" alt="Logo" class="h-5 w-auto opacity-40">
+                <p>&copy; Toolsbunny Blog</p>
+            </div>
+            <span class="font-mono text-[10px] uppercase text-zinc-600">Sandboxed Environment Processing Only</span>
+        </div>
+    </footer>
+
+</body>
+</html>
