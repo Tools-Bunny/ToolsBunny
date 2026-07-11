@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Global Pages -->
+  <url>
+    <loc>https://toolsbunny.com/</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://toolsbunny.com/blog.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- AI Developer Tools -->
+  <url><loc>https://toolsbunny.com/ai-tools/token-counter.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/system-prompt-injector.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/markdown-latex-stripper.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/prompt-variations.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/ai-diff-space.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/prompt-chunking.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/tone-dashboard.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/chat-payload-formatter.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/vision-image-optimizer.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/hyperparameter-visualizer.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/embedding-similarity.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/json-schema-lint.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/csv-dataset-factory.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/system-parameter-cheatsheet.html</loc></url>
+  <url><loc>https://toolsbunny.com/ai-tools/api-status-monitor.html</loc></url>
+
+  <!-- Content Creator Utilities -->
+  <url><loc>https://toolsbunny.com/creators/title-hook-tester.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/description-keyword-builder.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/aspect-ratio-guide.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/audio-format-converter.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/thumbnail-contrast.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/subtitle-srt-sync.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/social-post-splitter.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/video-framerate-meter.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/rgb-hex-studio.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/video-bitrate-calculator.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/script-pacer.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/hex-grid-mock.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/video-safe-zone.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/sponsor-cost-calculator.html</loc></url>
+  <url><loc>https://toolsbunny.com/creators/media-extension-picker.html</loc></url>
+
+  <!-- Web Developer Tools -->
+  <url><loc>https://toolsbunny.com/digital-users/password-generator.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/text-case-converter.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/browser-blueprint.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/epoch-sync.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/base64-encoder-decoder.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/url-encoder-decoder.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/md5-hash-generator.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/vision-simulator.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/lorem-ipsum-factory.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/distance-converter.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/binary-text-decoder.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/line-counter-filter.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/history-sandbox.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/duplicate-row-purger.html</loc></url>
+  <url><loc>https://toolsbunny.com/digital-users/aspect-ratio-calc.html</loc></url>
+</urlset>
