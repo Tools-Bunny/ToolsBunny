@@ -10,24 +10,35 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js Environment
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Execute SEO Page Generator
+      - name: Execute Page Generator
         run: node build-seo.js
 
-      - name: Commit and Push Generated Pages
+      - name: Commit Generated Pages to Repository
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add seo-tools/ sitemap.xml
-          git commit -m "Auto-generate programmatic SEO pages and sitemap" || exit 0
+          git commit -m "Auto-generate programmatic SEO pages and sitemap" || echo "No changes to commit"
           git push
+
+      - name: Deploy Directly to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: './'
+          production-deploy: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy SEO pages from GitHub Action"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
