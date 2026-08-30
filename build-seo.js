@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// Master Dataset Matrix covering all 45 utilities with high-volume long-tail modifiers
 const matrix = {
   // --- AI UTILITIES ---
   "ai-tools/token-counter.html": [
@@ -196,31 +195,29 @@ const matrix = {
   ]
 };
 
-// Target output folder
 const outputDir = path.join(__dirname, 'seo-tools');
 
-// Ensure directory exists
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
 let sitemapUrls = ['https://toolsbunny.com/'];
-
 let totalPagesGenerated = 0;
 
 Object.keys(matrix).forEach(baseFile => {
-  if (!fs.existsSync(baseFile)) {
-    console.warn(`Skipping missing base file: ${baseFile}`);
+  const absolutePath = path.join(__dirname, baseFile);
+
+  if (!fs.existsSync(absolutePath)) {
+    console.warn(`[MISSING FILE WARNING] Cannot locate: ${baseFile}`);
     return;
   }
 
-  const baseContent = fs.readFileSync(baseFile, 'utf8');
+  const baseContent = fs.readFileSync(absolutePath, 'utf8');
 
   matrix[baseFile].forEach(item => {
     const pageSlug = `${path.basename(baseFile, '.html')}-${item.slug}.html`;
     const fullCanonicalUrl = `https://toolsbunny.com/seo-tools/${pageSlug}`;
 
-    // Dynamic replacement of Title, Description, and insertion of Canonical Link + JSON-LD Schema
     let updatedHtml = baseContent
       .replace(/<title>.*?<\/title>/gi, `<title>${item.title} | Toolsbunny</title>`)
       .replace(
@@ -228,7 +225,6 @@ Object.keys(matrix).forEach(baseFile => {
         `<meta name="description" content="Free browser-based ${item.keyword}. 100% private client-side processing with zero server tracking.">`
       );
 
-    // Inject Canonical and Schema.org Structured Data before </head>
     const seoTags = `
     <!-- Programmatic SEO Injections -->
     <link rel="canonical" href="${fullCanonicalUrl}">
@@ -258,7 +254,6 @@ Object.keys(matrix).forEach(baseFile => {
   });
 });
 
-// Build dynamic sitemap.xml
 const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${sitemapUrls.map(url => `
@@ -271,4 +266,10 @@ const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 </urlset>`;
 
 fs.writeFileSync('sitemap.xml', sitemapContent.trim(), 'utf8');
-console.log(`Success! Generated ${totalPagesGenerated} landing pages inside /seo-tools/ and updated sitemap.xml.`);
+
+if (totalPagesGenerated === 0) {
+  console.error("ERROR: 0 pages generated! File paths inside matrix do not match repository layout.");
+  process.exit(1);
+} else {
+  console.log(`Success! Generated ${totalPagesGenerated} pages.`);
+}
