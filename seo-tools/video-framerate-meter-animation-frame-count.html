@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Animation Frame Count Meter | Toolsbunny</title>
+<meta name="description" content="Free browser-based Determine frame sequence count for video specs. 100% private client-side processing with zero server tracking.">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root { --bg-obsidian: #080808; --card-void: #16161A; --accent-stripe: #635BFF; --accent-mint: #00FFC2; }
+        body { background-color: var(--bg-obsidian); color: #E4E4E7; font-family: system-ui, -apple-system, sans-serif; }
+        .pulse-shell { background-color: var(--card-void); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+
+    <!-- Programmatic SEO Injections -->
+    <link rel="canonical" href="https://toolsbunny.com/seo-tools/video-framerate-meter-animation-frame-count.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Video Animation Frame Count Meter",
+      "operatingSystem": "All",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    </head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <header class="w-full border-b border-zinc-800 bg-black/50 backdrop-blur-md fixed top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html"><img src="https://github.com/ToolsBunny/toolsbunny/blob/main/logo.png?raw=true" alt="Logo" class="h-12 w-auto"></a>
+            <a href="../index.html" class="text-sm text-zinc-400 hover:text-white">← Matrix</a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 pt-32 pb-16 flex-grow">
+        <div id="pulse-ad-slot" class="w-full mb-8 p-4 bg-[#16161A] border border-dashed border-zinc-800 rounded-xl flex items-center justify-center min-h-[90px]">
+            <span class="text-xs text-zinc-600 font-mono uppercase">#pulse-ad-slot</span>
+        </div>
+
+        <div class="pulse-shell rounded-2xl p-6 md:p-8">
+            <h1 class="text-2xl font-bold text-white border-b border-zinc-800 pb-4 mb-6">Inference Frame Rate Matrix Calculator</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-[#0F0F12] border border-zinc-800 p-4 rounded-xl space-y-4">
+                    <div>
+                        <label class="text-xs font-mono text-zinc-400 block mb-1">Total Timeline Duration (Seconds)</label>
+                        <input type="number" id="timeline-secs" value="60" oninput="computeFrames()" class="w-full bg-black border border-zinc-800 rounded p-2 text-xs text-white font-mono">
+                    </div>
+                    <div>
+                        <label class="text-xs font-mono text-zinc-400 block mb-1">Target Frame Rate Sequence</label>
+                        <select id="fps-select" onchange="computeFrames()" class="w-full bg-black border border-zinc-800 text-xs text-white p-2 rounded">
+                            <option value="24">24 fps (Cinematic Standard)</option>
+                            <option value="30" selected>30 fps (Web Streaming Standard)</option>
+                            <option value="60">60 fps (High-Velocity Gaming)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bg-black border border-zinc-900 rounded-xl p-5 flex flex-col justify-center text-center">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase block">Total Discovered Frame Sequence Data Count</span>
+                    <span id="total-frames" class="text-4xl font-mono font-bold text-[#635BFF] my-2">1,800</span>
+                    <span class="text-xs text-zinc-400">Total individual image configurations compiled on target pipeline render.</span>
+                </div>
+            </div>
+        </div>
+<!-- SEO CONTENT START --><section class="mt-12 space-y-8 border-t border-zinc-900 pt-12">
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-zinc-900/30 p-6 rounded-xl border border-zinc-800">
+            <h3 class="text-white font-semibold mb-2">Private Processing</h3>
+            <p class="text-sm text-zinc-400">Verify your media file metadata locally, keeping your production assets entirely private and secure.</p>
+        </div>
+        <div class="bg-zinc-900/30 p-6 rounded-xl border border-zinc-800">
+            <h3 class="text-white font-semibold mb-2">Technical Verification</h3>
+            <p class="text-sm text-zinc-400">Quickly detect the exact framerate (FPS) of your footage to avoid sync issues during your editing process.</p>
+        </div>
+        <div class="bg-zinc-900/30 p-6 rounded-xl border border-zinc-800">
+            <h3 class="text-white font-semibold mb-2">Instant Calculation</h3>
+            <p class="text-sm text-zinc-400">Get immediate confirmation of your file's technical specs, enabling faster project setup and export.</p>
+        </div>
+    </div>
+    <div class="bg-black border border-zinc-800 p-8 rounded-2xl">
+        <h2 class="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <div><h4 class="text-white font-medium">Why check the framerate?</h4><p class="text-zinc-400 text-sm mt-1">Mixing different framerates in a single project can cause stuttering or desync. Knowing your FPS allows you to adjust your project settings accordingly.</p></div>
+            <div><h4 class="text-white font-medium">Is my data secure?</h4><p class="text-zinc-400 text-sm mt-1">Yes, all processing is done 100% locally on your machine. No data is transmitted, stored, or logged by Toolsbunny.</p></div>
+            <div><h4 class="text-white font-medium">Is this tool free to use?</h4><p class="text-zinc-400 text-sm mt-1">Yes, Toolsbunny's utilities are completely free, with no sign-ups or hidden API key requirements.</p></div>
+        </div>
+    </div></section><!-- SEO CONTENT END -->
+    </main>
+
+    <footer class="w-full border-t border-zinc-900 bg-black/80 px-6 py-6 text-xs text-zinc-600 text-center">
+        <p>Toolsbunny Hardware Processing Metrics Matrix</p>
+    </footer>
+
+    <script>
+        function computeFrames() {
+            const secs = parseFloat(document.getElementById('timeline-secs').value) || 0;
+            const fps = parseInt(document.getElementById('fps-select').value);
+            
+            const total = Math.ceil(secs * fps);
+            document.getElementById('total-frames').textContent = total.toLocaleString();
+        }
+    </script>
+</body>
+</html>
