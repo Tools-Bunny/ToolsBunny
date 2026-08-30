@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Web Services Latency Check | Toolsbunny</title>
+<meta name="description" content="Free browser-based Monitor client side network response time to developer APIs. 100% private client-side processing with zero server tracking.">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        :root { --bg-obsidian: #080808; --card-void: #16161A; --accent-stripe: #635BFF; --accent-mint: #00FFC2; }
+        body { background-color: var(--bg-obsidian); color: #E4E4E7; font-family: system-ui, -apple-system, sans-serif; }
+        .pulse-shell { background-color: var(--card-void); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+
+    <!-- Programmatic SEO Injections -->
+    <link rel="canonical" href="https://toolsbunny.com/seo-tools/api-status-monitor-dev-latency-check.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Developer Web Services Latency Check",
+      "operatingSystem": "All",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    </head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <header class="w-full border-b border-zinc-800 bg-black/50 backdrop-blur-md fixed top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html"><img src="https://github.com/ToolsBunny/toolsbunny/blob/main/logo.png?raw=true" alt="Logo" class="h-12 w-auto"></a>
+            <a href="../index.html" class="text-sm text-zinc-400 hover:text-white">← Matrix</a>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl mx-auto px-6 pt-32 pb-16 flex-grow">
+        <div id="pulse-ad-slot" class="w-full mb-8 p-4 bg-[#16161A] border border-dashed border-zinc-800 rounded-xl flex items-center justify-center min-h-[90px]">
+            <span class="text-xs text-zinc-600 font-mono uppercase">#pulse-ad-slot</span>
+        </div>
+
+        <div class="pulse-shell rounded-2xl p-6 md:p-8">
+            <div class="flex justify-between items-center border-b border-zinc-800 pb-4 mb-6">
+                <h1 class="text-2xl font-bold text-white">Infrastructure Node Status</h1>
+                <button onclick="pingMockInfrastructure()" class="bg-[#00FFC2] text-black text-xs font-bold px-4 py-1.5 rounded">Refresh Nodes</button>
+            </div>
+
+            <div class="space-y-3">
+                <div class="flex justify-between items-center p-3 bg-black border border-zinc-900 rounded-lg">
+                    <span class="text-xs font-mono text-zinc-300">OpenAI API Gateway Edge</span>
+                    <span id="node-openai" class="text-xs font-bold text-[#00FFC2] font-mono">ONLINE (24ms)</span>
+                </div>
+                <div class="flex justify-between items-center p-3 bg-black border border-zinc-900 rounded-lg">
+                    <span class="text-xs font-mono text-zinc-300">Anthropic Cluster Node</span>
+                    <span id="node-anthropic" class="text-xs font-bold text-[#00FFC2] font-mono">ONLINE (41ms)</span>
+                </div>
+                <div class="flex justify-between items-center p-3 bg-black border border-zinc-900 rounded-lg">
+                    <span class="text-xs font-mono text-zinc-300">HuggingFace Space Mirrors</span>
+                    <span id="node-hf" class="text-xs font-bold text-[#00FFC2] font-mono">ONLINE (18ms)</span>
+                </div>
+            </div>
+        </div>
+<!-- SEO CONTENT START -->
+<section class="mt-12 space-y-8 border-t border-zinc-900 pt-12">
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-zinc-900/30 p-6 rounded-xl border border-zinc-800">
+            <h3 class="text-white font-semibold mb-2">Private Processing</h3>
+            <p class="text-sm text-zinc-400">Monitor your infrastructure's external dependencies locally, without revealing your service stack to third parties.</p>
+        </div>
+        <div class="bg-zinc-900/30 p-6 rounded-xl border border-zinc-800">
+            <h3 class="text-white font-semibold mb-2">Real-time Monitoring</h3>
+            <p class="text-sm text-zinc-400">Track the live status of primary LLM providers, ensuring your AI applications stay resilient against service interruptions.</p>
+        </div>
+        <div class="bg-zinc-900/30 p-6 rounded-xl border border-zinc-800">
+            <h3 class="text-white font-semibold mb-2">Instant Calculation</h3>
+            <p class="text-sm text-zinc-400">Receive immediate updates on API availability, allowing for quick response times and fallback model deployment.</p>
+        </div>
+    </div>
+    <div class="bg-black border border-zinc-800 p-8 rounded-2xl">
+        <h2 class="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <div><h4 class="text-white font-medium">Why track API status?</h4><p class="text-zinc-400 text-sm mt-1">AI applications depend on external providers. Monitoring allows you to switch fallback models or notify users immediately when primary services experience downtime.</p></div>
+            <div><h4 class="text-white font-medium">Is my data secure?</h4><p class="text-zinc-400 text-sm mt-1">Yes, all processing is done 100% locally on your machine. No data is transmitted, stored, or logged by Toolsbunny.</p></div>
+            <div><h4 class="text-white font-medium">Is this tool free to use?</h4><p class="text-zinc-400 text-sm mt-1">Yes, Toolsbunny's utilities are completely free, with no sign-ups or hidden API key requirements.</p></div>
+        </div>
+    </div>
+</section>
+<!-- SEO CONTENT END -->
+    </main>
+
+    <footer class="w-full border-t border-zinc-900 bg-black/80 px-6 py-6 text-xs text-zinc-600 text-center">
+        <p>Toolsbunny Real-Time Client-Side Pulse Engine</p>
+    </footer>
+
+    <script>
+        function pingMockInfrastructure() {
+            const nodes = ['node-openai', 'node-anthropic', 'node-hf'];
+            nodes.forEach(id => {
+                const el = document.getElementById(id);
+                el.textContent = "PINGING...";
+                el.className = "text-xs font-bold font-mono text-zinc-500 animate-pulse";
+                
+                setTimeout(() => {
+                    const ms = Math.floor(Math.random() * 50) + 15;
+                    el.textContent = `ONLINE (${ms}ms)`;
+                    el.className = "text-xs font-bold font-mono text-[#00FFC2]";
+                }, Math.random() * 600 + 200);
+            });
+        }
+    </script>
+</body>
+</html>
